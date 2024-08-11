@@ -48,6 +48,34 @@ func getData(client wapi.ClientWithResponsesInterface) (*wapi.Ws, error) {
 	}
 }
 
+func buildNewsItems(worldState *wapi.Ws) []tui.ListItem {
+	var newsItems = make([]tui.ListItem, len(worldState.News))
+
+	for i, newsEntry := range worldState.News {
+		newsItems[i] = tui.ListItem{
+			Title:      newsEntry.Date,
+			Desc:       newsEntry.Message,
+			TitleIndex: i,
+			DescIndex:  i,
+		}
+	}
+	return newsItems
+}
+
+func buildEventItems(worldState *wapi.Ws) []tui.ListItem {
+	var eventItems = make([]tui.ListItem, len(worldState.Events))
+
+	for i, event := range worldState.Events {
+		eventItems[i] = tui.ListItem{
+			Title:      event.Expiry.String(),
+			Desc:       *event.Description,
+			TitleIndex: i,
+			DescIndex:  i,
+		}
+	}
+	return eventItems
+}
+
 func buildStrings(worldState *wapi.Ws) ([]string, []string) {
 	var newsStatusString, eventsString, cambionCycleString string
 

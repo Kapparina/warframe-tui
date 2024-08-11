@@ -11,6 +11,7 @@ require (
 require (
 	github.com/apapsch/go-jsonmerge/v2 v2.0.0 // indirect
 	github.com/aymanbagabas/go-osc52/v2 v2.0.1 // indirect
+	github.com/charmbracelet/bubbles v0.18.0 // indirect
 	github.com/charmbracelet/lipgloss v0.12.1 // indirect
 	github.com/charmbracelet/x/ansi v0.1.4 // indirect
 	github.com/charmbracelet/x/input v0.1.3 // indirect
